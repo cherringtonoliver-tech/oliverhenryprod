@@ -1,26 +1,22 @@
-# Oliver Henry — Landing Page
+# Oliver Henry — dark editorial landing page
 
-A minimal editorial landing page for GitHub Pages.
+A dark, minimal, text-led landing page for Oliver Henry, based on the positioning and structure of the existing oliverhenryprod.com site.
 
-## Folder structure
+This version intentionally uses **no photographs**. The visual language is carried by typography, negative space, dark tones and subtle texture.
 
-- `index.html` — page
-- `style.css` — styling
-- `assets/` — put your photos here
-- `assets/hero.jpg` — main portrait / piano image
-- `assets/session-01.jpg`, `session-02.jpg`, `session-03.jpg` — video thumbnails
+## Included
+- Session keys / piano positioning
+- London identity
+- Selected credits
+- Live / sessions section with clickable video cards
+- Booking contact form
+- `oliverhenryprod@gmail.com`
+- Responsive mobile layout
+- `assets/` folder kept ready for future images
 
 ## Before publishing
+1. Replace the three YouTube links in `index.html`.
+2. Connect the Formspree action to your form endpoint.
+3. Push the folder to GitHub and enable GitHub Pages.
 
-1. Add your images to `assets/`.
-2. Replace the three YouTube links in `index.html` with your actual session/video URLs.
-3. For the contact form, create a free Formspree form and replace:
-   `https://formspree.io/f/YOUR_FORM_ID`
-   with your Formspree endpoint.
-4. Push the folder to GitHub and enable GitHub Pages from the repository's Pages settings.
-
-The visible email address also uses `mailto:` as a direct fallback.
-
-## GitHub Pages
-
-This is a static site, so it works on GitHub Pages with no server required.
+The current site content used as inspiration includes "session piano/keys", London, Watch, Listen, Credits/Releases and Contact sections. 
