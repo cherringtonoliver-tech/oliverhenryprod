@@ -1,0 +1,1 @@
+Add hero.jpg, session-01.jpg, session-02.jpg and session-03.jpg here. You can add more images and update index.html as needed.
