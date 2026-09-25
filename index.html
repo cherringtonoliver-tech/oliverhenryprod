@@ -1,676 +1,969 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Oliver Henry | Session Piano & Keys</title>
-<meta name="description" content="Oliver Henry — session piano/keys, audio engineer and producer. London.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
+  <title>Oliver Henry | Session Piano & Keys</title>
 
-:root{
-  --bg:#11100f;
-  --paper:#eee8dc;
-  --muted:#918a7d;
-}
+  <meta
+    name="description"
+    content="Oliver Henry — session piano/keys, audio engineer and producer. London."
+  >
 
-*{box-sizing:border-box}
+  <style>
 
-html{scroll-behavior:smooth}
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400&family=Playfair+Display:ital,wght@0,500;1,500&display=swap');
 
-body{
-  margin:0;
-  background:var(--bg);
-  color:var(--paper);
-  font:13px/1.5 "DM Mono",monospace;
-}
+    :root {
+      --bg: #9d8d70;
+      --paper: #f2eadc;
+      --muted: #d8ccb8;
+    }
 
-a{
-  color:inherit;
-  text-decoration:none;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.top{
-  position:fixed;
-  z-index:20;
-  top:0;
-  left:0;
-  right:0;
-  padding:22px 4vw;
-  display:flex;
-  justify-content:space-between;
-  border-bottom:1px solid var(--line);
-  background:rgba(17,16,15,.88);
-  backdrop-filter:blur(10px);
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-nav{
-  display:flex;
-  gap:28px;
-  color:var(--muted);
-}
+    body {
+      margin: 0;
+      background-color: var(--bg);
 
-nav a:hover{
-  color:var(--paper);
-}
+      /*
+        Put your texture image in assets and change this
+        filename if needed.
+      */
+      background-image:
+        linear-gradient(
+          rgba(80, 65, 45, .06),
+          rgba(80, 65, 45, .06)
+        ),
+        url("assets/background-texture.png");
 
-.hero{
-  padding:110px 4vw 7vw;
-}
+      background-repeat: repeat;
+      background-size: 900px auto;
+      background-attachment: fixed;
 
-.hero-video{
-  height:min(74vh,760px);
-  min-height:460px;
-  background:#191714;
-  position:relative;
-  overflow:hidden;
-  border:1px solid var(--line);
-}
+      color: var(--paper);
+      font: 13px/1.5 "DM Mono", monospace;
+    }
 
-.hero-video img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:brightness(.55) saturate(.7);
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-.hero-video:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    180deg,
-    transparent 45%,
-    rgba(0,0,0,.7)
-  );
-}
+    /* HEADER */
 
-.video-label{
-  position:absolute;
-  z-index:2;
-  left:28px;
-  bottom:25px;
-  text-transform:uppercase;
-  letter-spacing:.1em;
-  font-size:10px;
-}
+    .top {
+      position: fixed;
+      z-index: 20;
+      top: 0;
+      left: 0;
+      right: 0;
 
-.play{
-  position:absolute;
-  z-index:3;
-  left:50%;
-  top:50%;
-  transform:translate(-50%,-50%);
-  width:74px;
-  height:74px;
-  border:1px solid var(--paper);
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  font-size:15px;
-}
+      padding: 22px 4vw;
 
-.hero-copy{
-  display:flex;
-  justify-content:space-between;
-  align-items:end;
-  padding:28px 0;
-  border-bottom:1px solid var(--line);
-}
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
 
-h1{
-  font:500 clamp(48px,8vw,120px)/.88 "Playfair Display",serif;
-  letter-spacing:-.05em;
-  margin:0;
-}
+      background: rgba(157, 141, 112, .82);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+    }
 
-h1 em,
-h2 em{
-  font-style:italic;
-}
+    .brand {
+      font-size: 12px;
+      letter-spacing: .02em;
+    }
 
-.eyebrow{
-  color:var(--muted);
-  font-size:10px;
-  letter-spacing:.13em;
-  text-transform:uppercase;
-  margin:0;
-}
+    nav {
+      display: flex;
+      gap: 28px;
+      color: var(--muted);
+    }
 
-.scroll{
-  color:var(--muted);
-}
+    nav a {
+      transition: color .2s ease;
+    }
 
-.about{
-  padding:10vw 4vw;
-  border-bottom:1px solid var(--line);
-}
+    nav a:hover {
+      color: var(--paper);
+    }
 
-.about-grid{
-  display:grid;
-  grid-template-columns:1fr 2fr;
-  gap:8vw;
-  margin-top:5vw;
-}
+    /* HERO */
 
-h2{
-  font:500 clamp(44px,6vw,86px)/.95 "Playfair Display",serif;
-  letter-spacing:-.045em;
-  margin:0;
-}
+    .hero {
+      padding: 110px 4vw 7vw;
+    }
 
-.about p{
-  font:16px/1.65 "Playfair Display",serif;
-  max-width:650px;
-  margin:0;
-}
+    .hero-video {
+      height: min(74vh, 760px);
+      min-height: 460px;
 
-.credits{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px 25px;
-  margin-top:45px;
-  color:var(--muted);
-  font-family:"Playfair Display",serif;
-  font-size:24px;
-}
+      background: #8f8065;
 
-.credits span{
-  color:var(--paper);
-}
+      position: relative;
+      overflow: hidden;
+    }
 
-.media{
-  padding:8vw 0;
-  border-bottom:1px solid var(--line);
-}
+    .hero-video video {
+      position: absolute;
+      inset: 0;
 
-.media-head{
-  display:flex;
-  justify-content:space-between;
-  padding:0 4vw 25px;
-}
+      width: 100%;
+      height: 100%;
 
-.carousel{
-  display:flex;
-  gap:16px;
-  overflow-x:auto;
-  padding:0 4vw 18px;
-  scroll-snap-type:x mandatory;
-}
+      object-fit: cover;
+      display: block;
 
-.card{
-  flex:0 0 min(65vw,700px);
-  scroll-snap-align:start;
-}
+      filter:
+        brightness(.78)
+        saturate(.72)
+        sepia(.12);
+    }
 
-.thumb{
-  height:min(50vw,440px);
-  min-height:300px;
-  position:relative;
-  background:#201e1a;
-  overflow:hidden;
-}
+    .hero-video::after {
+      content: "";
+      position: absolute;
+      inset: 0;
 
-.thumb img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  filter:brightness(.72) saturate(.72);
-  transition:.5s;
-}
+      background:
+        linear-gradient(
+          180deg,
+          transparent 45%,
+          rgba(32, 25, 18, .48)
+        );
 
-.card:hover img{
-  transform:scale(1.025);
-  filter:brightness(.85) saturate(.85);
-}
+      pointer-events: none;
+    }
 
-.card-title{
-  display:flex;
-  justify-content:space-between;
-  padding:13px 0;
-  border-bottom:1px solid var(--line);
-  font-size:10px;
-}
+    .video-label {
+      position: absolute;
+      z-index: 2;
 
-.card-title span:last-child{
-  color:var(--muted);
-}
+      left: 28px;
+      bottom: 25px;
 
-.listen{
-  padding:9vw 4vw;
-  border-bottom:1px solid var(--line);
-}
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: 10px;
+    }
 
-.listen-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:8vw;
-  align-items:start;
-}
+    .hero-copy {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
 
-.spotify{
-  margin-top:35px;
-  border:1px solid var(--line);
-  min-height:180px;
-}
+      padding: 28px 0;
+    }
 
-.spotify iframe{
-  width:100%;
-  height:180px;
-  border:0;
-}
+    h1 {
+      font:
+        500 clamp(48px, 8vw, 120px) / .88
+        "Playfair Display",
+        serif;
 
-.contact{
-  padding:10vw 4vw;
-}
+      letter-spacing: -.05em;
+      margin: 0;
+    }
 
-.contact-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10vw;
-  margin-top:6vw;
-}
+    h1 em,
+    h2 em {
+      font-style: italic;
+    }
 
-.contact h2{
-  margin-bottom:45px;
-}
+    .eyebrow {
+      color: var(--muted);
 
-.email{
-  font-size:14px;
-  border-bottom:1px solid var(--paper);
-  padding-bottom:5px;
-}
+      font-size: 10px;
+      letter-spacing: .13em;
+      text-transform: uppercase;
 
-.links{
-  display:flex;
-  flex-direction:column;
-  gap:18px;
-  font-size:14px;
-}
+      margin: 0 0 14px;
+    }
 
-.links a{
-  display:flex;
-  justify-content:space-between;
-  border-bottom:1px solid var(--line);
-  padding-bottom:12px;
-}
+    .scroll {
+      color: var(--muted);
+    }
 
-.links span{
-  color:var(--muted);
-}
+    /* ABOUT */
 
-footer{
-  padding:22px 4vw;
-  border-top:1px solid var(--line);
-  display:flex;
-  justify-content:space-between;
-  color:var(--muted);
-  font-size:10px;
-}
+    .about {
+      padding: 10vw 4vw;
+    }
 
-@media(max-width:760px){
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
 
-  .top{
-    padding:18px 5vw;
-  }
+      gap: 8vw;
+      margin-top: 5vw;
+    }
 
-  .top nav{
-    gap:14px;
-  }
+    h2 {
+      font:
+        500 clamp(44px, 6vw, 86px) / .95
+        "Playfair Display",
+        serif;
 
-  .hero{
-    padding-top:92px;
-    padding-left:5vw;
-    padding-right:5vw;
-  }
+      letter-spacing: -.045em;
+      margin: 0;
+    }
 
-  .hero-video{
-    min-height:420px;
-    height:64vh;
-  }
+    .about p {
+      font:
+        16px / 1.65
+        "Playfair Display",
+        serif;
 
-  .hero-copy{
-    display:block;
-  }
+      max-width: 650px;
+      margin: 0;
+    }
 
-  .hero-copy .scroll{
-    margin-top:25px;
-  }
+    /* WORK */
 
-  .about,
-  .listen,
-  .contact{
-    padding-left:5vw;
-    padding-right:5vw;
-  }
+    .media {
+      padding: 8vw 0;
+    }
 
-  .about-grid,
-  .listen-grid,
-  .contact-grid{
-    grid-template-columns:1fr;
-    gap:45px;
-  }
+    .media-head {
+      display: flex;
+      justify-content: space-between;
 
-  .carousel{
-    padding-left:5vw;
-  }
+      padding: 0 4vw 25px;
+    }
 
-  .card{
-    flex-basis:82vw;
-  }
+    .carousel {
+      display: flex;
+      gap: 16px;
 
-  .thumb{
-    min-height:260px;
-    height:60vw;
-  }
+      overflow-x: auto;
 
-  .credits{
-    font-size:20px;
-  }
+      padding: 0 4vw 18px;
 
-  .media-head{
-    padding-left:5vw;
-    padding-right:5vw;
-  }
+      scroll-snap-type: x mandatory;
 
-  footer{
-    padding:18px 5vw;
-    gap:12px;
-    flex-wrap:wrap;
-  }
-}
-</style>
+      scrollbar-width: thin;
+    }
+
+    .card {
+      flex: 0 0 min(65vw, 700px);
+      scroll-snap-align: start;
+    }
+
+    .thumb {
+      aspect-ratio: 3 / 2;
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      background: #8f8065;
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      filter:
+        brightness(.86)
+        saturate(.70)
+        sepia(.10);
+
+      transition:
+        transform .5s ease,
+        filter .5s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.025);
+
+      filter:
+        brightness(.92)
+        saturate(.78)
+        sepia(.08);
+    }
+
+    .card-title {
+      display: flex;
+      justify-content: space-between;
+
+      padding: 13px 0;
+
+      font-size: 10px;
+    }
+
+    .card-title span:last-child {
+      color: var(--muted);
+    }
+
+    /* LISTEN */
+
+    .listen {
+      padding: 9vw 4vw;
+    }
+
+    .listen-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 8vw;
+
+      align-items: start;
+    }
+
+    .spotify {
+      margin-top: 35px;
+      min-height: 180px;
+    }
+
+    .spotify iframe {
+      width: 100%;
+      height: 180px;
+
+      border: 0;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      padding: 10vw 4vw;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 10vw;
+
+      margin-top: 6vw;
+    }
+
+    .contact h2 {
+      margin-bottom: 45px;
+    }
+
+    .email {
+      font-size: 14px;
+
+      border-bottom:
+        1px solid rgba(242, 234, 220, .72);
+
+      padding-bottom: 5px;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+
+      gap: 18px;
+
+      font-size: 14px;
+    }
+
+    .links a {
+      display: flex;
+      justify-content: space-between;
+
+      padding-bottom: 12px;
+    }
+
+    .links span {
+      color: var(--muted);
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 22px 4vw;
+
+      display: flex;
+      justify-content: space-between;
+
+      color: var(--muted);
+
+      font-size: 10px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 760px) {
+
+      .top {
+        padding: 18px 5vw;
+      }
+
+      .top nav {
+        gap: 14px;
+      }
+
+      .hero {
+        padding-top: 92px;
+        padding-left: 5vw;
+        padding-right: 5vw;
+      }
+
+      .hero-video {
+        min-height: 420px;
+        height: 64vh;
+      }
+
+      .hero-copy {
+        display: block;
+      }
+
+      .hero-copy .scroll {
+        margin-top: 25px;
+      }
+
+      .about,
+      .listen,
+      .contact {
+        padding-left: 5vw;
+        padding-right: 5vw;
+      }
+
+      .about-grid,
+      .listen-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .carousel {
+        padding-left: 5vw;
+      }
+
+      .card {
+        flex-basis: 82vw;
+      }
+
+
+      .media-head {
+        padding-left: 5vw;
+        padding-right: 5vw;
+      }
+
+      footer {
+        padding: 18px 5vw;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+    }
+
+  </style>
 </head>
+
 
 <body>
 
-<header class="top">
-  <a href="#">OLIVER HENRY</a>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#work">Work</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <!-- HEADER -->
 
-<main>
+  <header class="top">
 
-<!-- HERO / VIDEO -->
+    <a class="brand" href="#top">
+      Oliver Henry
+    </a>
 
-<section class="hero">
+    <nav>
+      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#listen">Listen</a>
+      <a href="#contact">Contact</a>
+    </nav>
 
-  <div class="hero-video">
+  </header>
 
-    <!-- Replace this image with your video thumbnail,
-         or replace this entire block with a video embed. -->
 
-    <img
-      src="https://static.wixstatic.com/media/e6ad4f_eea0c9dfec7d4b329a554da0bff7fe79~mv2.jpg/v1/fill/w_1137,h_754,al_c,q_85/usm_0.66_1.00_0.01,enc_avif,quality_auto/e6ad4f_eea0c9dfec7d4b329a554da0bff7fe79~mv2.jpg"
-      alt="Oliver Henry"
+  <main id="top">
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+      <div class="hero-video">
+
+  <video
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="auto"
+>
+  <source src="assets/hero-video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+        <div class="video-label">
+          Watch / Sessions ↘
+        </div>
+
+      </div>
+
+
+      <div class="hero-copy">
+
+        <div>
+
+          <p class="eyebrow">
+            London
+          </p>
+
+          <h1>
+            Oliver <em>Henry.</em>
+          </h1>
+
+        </div>
+
+
+        <div class="scroll">
+
+          session piano / keys<br>
+
+          audio engineer / producer
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ABOUT -->
+
+    <section
+      class="about"
+      id="about"
     >
 
-    <a class="play" href="#work" aria-label="Watch sessions">
-      ▶
-    </a>
-
-    <div class="video-label">
-      Watch / Sessions ↘
-    </div>
-
-  </div>
-
-  <div class="hero-copy">
-
-    <div>
-      <p class="eyebrow">London</p>
-
-      <h1>
-        Oliver<br>
-        <em>Henry.</em>
-      </h1>
-    </div>
-
-    <div class="scroll">
-      session piano / keys<br>
-      audio engineer / producer
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section class="about" id="about">
-
-  <p class="eyebrow">
-    
-  </p>
-
-  <div class="about-grid">
-
-    <h2>
-      Session<br>
-      <em>piano / keys.</em>
-    </h2>
-
-    <div>
-
-      <p>
-        London based session piano/keys player,
-        audio engineer and producer.
-        Available for live work, recording and sessions.
+      <p class="eyebrow">
+        01 / About
       </p>
 
 
-      </div>
+      <div class="about-grid">
 
-    </div>
-
-  </div>
-
-</section>
-
-
-<!-- WORK / CAROUSEL -->
-
-<section class="media" id="work">
-
-  <div class="media-head">
-
-    <p class="eyebrow">
-      Watch
-    </p>
-
-    <p class="eyebrow">
-      Swipe ↔
-    </p>
-
-  </div>
+        <h2>
+          Piano, keys<br>
+          & <em>sound.</em>
+        </h2>
 
 
-  <div class="carousel">
+        <div>
 
-    <a class="card" href="#contact">
+          <p>
+            London based session piano/keys player,
+            audio engineer and producer.
+            Available for live work, recording
+            and sessions.
+          </p>
 
-      <div class="thumb">
-
-        <img
-          src="https://static.wixstatic.com/media/e6ad4f_1f8e9432fc6545dda0ab2b70d3d0a224~mv2.jpg/v1/fill/w_980,h_650,al_c,q_85/usm_0.66_1.00_0.01,enc_avif,quality_auto/e6ad4f_1f8e9432fc6545dda0ab2b70d3d0a224~mv2.jpg"
-          alt="Oliver Henry session"
-        >
+        </div>
 
       </div>
 
-      <div class="card-title">
-        <span>01 / LIVE SESSION</span>
-        <span>↗</span>
-      </div>
-
-    </a>
+    </section>
 
 
-    <a class="card" href="#contact">
 
-      <div class="thumb">
+    <!-- WORK -->
 
-        <img
-          src="https://static.wixstatic.com/media/e6ad4f_ed389de29b4c4c15945f48b67ec63bbf~mv2.jpg/v1/fill/w_648,h_430,al_c,q_80/usm_0.66_1.00_0.01,enc_avif,quality_auto/e6ad4f_ed389de29b4c4c15945f48b67ec63bbf~mv2.jpg"
-          alt="Oliver Henry"
-        >
+    <section
+      class="media"
+      id="work"
+    >
 
-      </div>
+      <div class="media-head">
 
-      <div class="card-title">
-        <span>02 / SESSION</span>
-        <span>↗</span>
-      </div>
+        <p class="eyebrow">
+          02 / Work
+        </p>
 
-    </a>
-
-
-    <a class="card" href="#contact">
-
-      <div class="thumb">
-
-        <img
-          src="https://static.wixstatic.com/media/e6ad4f_eea0c9dfec7d4b329a554da0bff7fe79~mv2.jpg/v1/fill/w_1137,h_754,al_c,q_85/usm_0.66_1.00_0.01,enc_avif,quality_auto/e6ad4f_eea0c9dfec7d4b329a554da0bff7fe79~mv2.jpg"
-          alt="Oliver Henry"
-        >
+        <span>
+          Drag ↔
+        </span>
 
       </div>
 
-      <div class="card-title">
-        <span>03 / LIVE</span>
-        <span>↗</span>
+
+      <div class="carousel">
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/NoSo Islington Assembly Hall Stage 52.JPG"
+              alt="Oliver Henry — work image 1"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/NoSo Islington Assembly Hall Stage 46.JPG"
+              alt="Oliver Henry — work image 2"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/NoSo Islington Assembly Hall Stage 36.jpg"
+              alt="Oliver Henry — work image 3"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/NoSo Islington Assembly Hall Stage 35 BW.JPG"
+              alt="Oliver Henry — work image 4"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/NoSo Islington Assembly Hall Stage 31.jpg"
+              alt="Oliver Henry — work image 5"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/NoSo Islington Assembly Hall Stage 20 Crop.jpg"
+              alt="Oliver Henry — work image 6"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/NoSo Islington Assembly Hall Stage 16.JPG"
+              alt="Oliver Henry — work image 7"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/NoSo Islington Assembly Hall Stage 15.JPG"
+              alt="Oliver Henry — work image 8"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/NoSo Islington Assembly Hall Stage 12.JPG"
+              alt="Oliver Henry — work image 9"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/NoSo Islington Assembly Hall Stage 2.jpg"
+              alt="Oliver Henry — work image 10"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/MR_0012_Portra 400_001084-23.JPG"
+              alt="Oliver Henry — work image 11"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/MR_0012_Portra 400_001084-17.JPG"
+              alt="Oliver Henry — work image 12"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/MR_0012_Portra 400_001084-12.JPG"
+              alt="Oliver Henry — work image 13"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/MR_0012_Portra 400_001084-11.JPG"
+              alt="Oliver Henry — work image 14"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/MR_0011_Portra 400_001136-04.JPG"
+              alt="Oliver Henry — work image 15"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/IMG_4361.JPG"
+              alt="Oliver Henry — work image 16"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/IMG_4360.JPG"
+              alt="Oliver Henry — work image 17"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/IMG_4359.JPG"
+              alt="Oliver Henry — work image 18"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/IMG_0619.jpg"
+              alt="Oliver Henry — work image 19"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="thumb">
+            <img
+              src="assets/FE4CFB5C-F04E-48DE-8B8E-C7D9F6FA0B8D.JPG"
+              alt="Oliver Henry — work image 20"
+              loading="lazy"
+            >
+          </div>
+        </article>
+
       </div>
 
-    </a>
-
-  </div>
-
-</section>
+    </section>
 
 
-<!-- LISTEN -->
 
-<section class="listen">
+    <!-- LISTEN -->
 
-  <div class="listen-grid">
+    <section
+      class="listen"
+      id="listen"
+    >
 
-    <div>
+      <div class="listen-grid">
+
+
+        <div>
+
+          <p class="eyebrow">
+            03 / Listen
+          </p>
+
+          <h2>
+            Selected<br>
+            <em>work.</em>
+          </h2>
+
+        </div>
+
+
+        <div>
+
+          <p>
+            A selection of releases,
+            recordings and production work.
+          </p>
+
+
+          <div class="spotify">
+
+            <iframe
+              src="https://open.spotify.com/embed/playlist/53IkkwHNXAa4GuJJyInFQH?utm_source=generator"
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+              loading="lazy"
+              title="Oliver Henry Spotify playlist"
+            ></iframe>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- CONTACT -->
+
+    <section
+      class="contact"
+      id="contact"
+    >
 
       <p class="eyebrow">
-        Listen
+        04 / Contact
       </p>
 
-      <h2>
-        Credits<br>
-        <em>and releases</em>
-      </h2>
 
-    </div>
+      <div class="contact-grid">
 
 
-    <div class="spotify">
+        <div>
 
-      <iframe
-        src="https://open.spotify.com/embed/playlist/53IkkwHNXAa4GuJJyInFQH?utm_source=generator"
-        loading="lazy"
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-      </iframe>
-
-    </div>
-
-  </div>
-
-</section>
+          <h2>
+            Let's make<br>
+            something <em>good.</em>
+          </h2>
 
 
-<!-- CONTACT -->
+          <a
+            class="email"
+            href="mailto:oliverhenryprod@gmail.com"
+          >
+            oliverhenryprod@gmail.com
+          </a>
 
-<section class="contact" id="contact">
-
-  <p class="eyebrow">
-    Contact
-  </p>
-
-  <div class="contact-grid">
-
-    <div>
+        </div>
 
 
-      <a
-        class="email"
-        href="mailto:oliverhenryprod@gmail.com">
-        oliverhenryprod@gmail.com
-      </a>
 
-    </div>
+        <div class="links">
 
 
-    <div class="links">
+          <a
+            href="https://www.instagram.com/oliverhenryprod/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
 
-      <a
-        href="https://wa.me/447506794618"
-        target="_blank"
-        rel="noreferrer">
+            Instagram
 
-        <span>WhatsApp</span>
-        ↗
+            <span>
+              ↗
+            </span>
 
-      </a>
-
-
-      <a
-        href="https://www.instagram.com/oliverhenryprod/"
-        target="_blank"
-        rel="noreferrer">
-
-        <span>Instagram</span>
-        @oliverhenryprod ↗
-
-      </a>
+          </a>
 
 
-      <a
-        href="https://open.spotify.com/playlist/53IkkwHNXAa4GuJJyInFQH"
-        target="_blank"
-        rel="noreferrer">
+          <a
+            href="https://wa.me/447506794618"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
 
-        <span>Spotify</span>
-        Credits / releases ↗
+            WhatsApp
 
-      </a>
+            <span>
+              ↗
+            </span>
 
-    </div>
-
-  </div>
-
-</section>
-
-</main>
+          </a>
 
 
-<footer>
+          <a
+            href="https://open.spotify.com/playlist/53IkkwHNXAa4GuJJyInFQH"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
 
-  <span>
-    © Oliver Henry
-  </span>
+            Spotify
 
-  <span>
-    London, UK
-  </span>
+            <span>
+              ↗
+            </span>
 
-  <a href="mailto:oliverhenryprod@gmail.com">
-    Email ↗
-  </a>
+          </a>
 
-</footer>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <span>
+      © Oliver Henry
+    </span>
+
+    <span>
+      London, UK
+    </span>
+
+  </footer>
+
 
 </body>
 </html>
-
